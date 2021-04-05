@@ -1,5 +1,5 @@
-baseurl = "https://jeff.cofos.github.io"
-title = "Mainroad"
+baseurl = "https://jeffrey-kor.github.io"
+title = "Jeffrey 10 fingers"
 languageCode = "en-us"
 paginate = "10" # Number of posts per page
 theme = "mainroad"
@@ -8,7 +8,7 @@ googleAnalytics = "" # Enable Google Analytics by entering your tracking id
 
 [Author] # Used in authorbox
   name = "Jeff.cofos"
-  bio = "John Doe's true identity is unknown. Maybe he is a successful blogger or writer. Nobody knows it."
+  bio = "Software developer that's trying to contribute to society 🙈 Traveler with co-worker 🎌 Share, Reading, Talking🙆‍♂️"
   avatar = "img/avatar.png"
 
 [Params]
