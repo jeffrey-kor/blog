@@ -1,13 +1,13 @@
 ---
-title: "Test"
+title: "저장"
 date: 2021-04-07T04:00:32+09:00
 draft: true
 categories:
-  - "Category 1"
+  - "Database"
   - "Category 2"
 tags:
-  - "Test"
-  - "Another test"
+  - "Database"
+  - "Computer Science"
 menu: main # Optional, add page to a menu. Options: main, side, footer
 thumbnail: "img/placeholder.jpg"
 comments: true
