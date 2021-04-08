@@ -3,6 +3,7 @@ title = "Jeffrey 10 fingers"
 languageCode = "en-us"
 paginate = "10"
 theme = "mainroad"
+sectionPagesMenu = "main"
 
 [Author]
   name = "Jeffrey Yoon"
@@ -62,50 +63,11 @@ theme = "mainroad"
   github = "Jeffrey-kor"
   email = "jeffrey.cofos"
 
-[[Params.widgets.social.custom]]
-  title = "My Home Page"
-  url = "http://jeffrey-kor.github.io"
-
 [menu]
 
   [[menu.main]]
-    identifier = "cs"
-    name = "COMPUTER SCIENCE"
+    identifier = "about"
+    name = "about"
     pre = "<i class='fa fa-heart'></i>"
-    url = "/cs/"
+    url = "/about/"
     weight = -110
-
-  [[menu.main]]
-    identifier = "cloud"
-    name = "CLOUD"
-    pre = "<i class='fa fa-heart'></i>"
-    url = "/cloud/"
-    weight = -110
-  
-  [[menu.main]]
-    identifier = "opensource"
-    name = "OPEN SOURCE"
-    pre = "<i class='fa fa-heart'></i>"
-    url = "/open-source/"
-    weight = -110
-
-  [[menu.main]]
-  identifier = "book"
-  name = "BOOK"
-  pre = "<i class='fa fa-heart'></i>"
-  url = "/book/"
-  weight = -110
-
-  [[menu.main]]
-  identifier = "translate"
-  name = "TRANSLATE"
-  pre = "<i class='fa fa-heart'></i>"
-  url = "/translate/"
-  weight = -110
-
-  [[menu.main]]
-  identifier = "book"
-  name = "BOOK"
-  pre = "<i class='fa fa-heart'></i>"
-  url = "/book/"
-  weight = -110
