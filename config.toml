@@ -2,6 +2,7 @@ baseurl = "https://jeffrey-kor.github.io/"
 title = "Jeffrey 10 fingers"
 languageCode = "en-us"
 paginate = "10"
+readmore = true
 theme = "mainroad"
 sectionPagesMenu = "main"
 
@@ -28,7 +29,7 @@ sectionPagesMenu = "main"
   mathjaxPath = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js" # Specify MathJax path
   mathjaxConfig = "TeX-AMS-MML_HTMLorMML" # Specify MathJax config
   googleFontsLink = "https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" # Load Google Fonts
-  highlightColor = "" # Deprecated in favor of .Site.Params.style.vars.highlightColor
+  highlightColor = "blue" # Deprecated in favor of .Site.Params.style.vars.highlightColor
   customCSS = ["css/custom.css"] # Include custom CSS files
   customJS = ["js/custom.js"] # Include custom JS files
 
