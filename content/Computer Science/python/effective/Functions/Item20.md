@@ -1,8 +1,7 @@
 ---
 title: "Effective Python: Return None"
 date: 2021-04-12T17:16:48+09:00
-draft: true
-thumbnail: "images/effective.jpg"
+# thumbnail: "images/effective.jpg"
 categories:
   - "Python"
   - "Effective Python"

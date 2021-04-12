@@ -1,8 +1,7 @@
 ---
 title: "Effective Python: Python Unpacking "
 date: 2021-04-12T15:51:12+09:00
-draft: true
-thumbnail: "images/effective.jpg"
+# thumbnail: "images/effective.jpg"
 categories:
   - "Python"
   - "Effective Python"
