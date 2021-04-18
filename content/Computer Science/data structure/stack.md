@@ -32,9 +32,7 @@ Stack 자료구조는 선형 자료구조이며, LIFO, 즉 후입선출의 데�
 아래 코드는 간단하게 스택 자료구조를 구현한 것이다. 이미 파이썬에서의 배열 관련 함수로 append()와 pop()를 제공하기 때문에 따로 스택 자료구조를
 구현할 필요는 없다. 다만 기본 자료구조가 제공하는 오퍼레이션 등은 기억해두고 다른 언어로 구현하는 연습도 해보자.
 ##### Implementation using built-in Function
-{{<rowhtml>}}
-  <script src="https://gist.github.com/jeffrey-kor/ef6cd08ef666b81817065e998c012c0c.js"></script>
-{{</rowhtml>}}
+{{< gist jeffrey-kor ef6cd08ef666b81817065e998c012c0c >}}
 
 ##### Implementation using singly linked list
 
