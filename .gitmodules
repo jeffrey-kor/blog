@@ -7,3 +7,11 @@
 [submodule "mainroad"]
 	path = mainroad
 	url = https://github.com/vimux/mainroad
+[submodule "jeffrey-kor.github.io"]
+	path = jeffrey-kor.github.io
+	url = https://github.com/jeffrey-kor/jeffrey-kor.github.io.git
+	branch = master
+[submodule "public"]
+	path = public
+	url = https://github.com/jeffrey-kor/jeffrey-kor.github.io.git
+	branch = master
