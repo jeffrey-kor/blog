@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Effective Python: Python Unpacking  - Jeffrey 10 fingers</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+		<meta property="og:title" content="Effective Python: Python Unpacking " />
+<meta property="og:description" content="Effective Python 이펙티브 파이썬이라는 책은 구글 검색 결과 파이썬 중급자들이 읽는 책이라고 설명되어 있는 부분들이 많다. 나는 굳이 파이썬에 대해 초급, 중급, 고급으로 분류를 해 미리 입문의 허들을 높이는 것은 좋지 않다고 생각한다. 하기사 그럴만큼 파이썬의 기본 동작 원리나 내부를 잘 알지 못한 채 다양한 기법을 배우는 것 또한 좋지는 않지만, 도저히 호기심을 이길 수 가 없어 중급이 아님에도 읽어보려한다. 이 책을 보기 앞서 잠깐 INDEX를 살펴본 결과 파이썬 기본 책이나 Docs를 보면 나와있는 목차들의 심화적인 내용을 다루고 있다고 생각하면 편할 듯 하다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jeffrey-kor.github.io/computer-science/python/effective/functions/item19/" /><meta property="article:section" content="Computer Science" />
+<meta property="article:published_time" content="2021-04-12T15:51:12&#43;09:00" />
+<meta property="article:modified_time" content="2021-04-12T15:51:12&#43;09:00" />
+
+
+		<meta itemprop="name" content="Effective Python: Python Unpacking ">
+<meta itemprop="description" content="Effective Python 이펙티브 파이썬이라는 책은 구글 검색 결과 파이썬 중급자들이 읽는 책이라고 설명되어 있는 부분들이 많다. 나는 굳이 파이썬에 대해 초급, 중급, 고급으로 분류를 해 미리 입문의 허들을 높이는 것은 좋지 않다고 생각한다. 하기사 그럴만큼 파이썬의 기본 동작 원리나 내부를 잘 알지 못한 채 다양한 기법을 배우는 것 또한 좋지는 않지만, 도저히 호기심을 이길 수 가 없어 중급이 아님에도 읽어보려한다. 이 책을 보기 앞서 잠깐 INDEX를 살펴본 결과 파이썬 기본 책이나 Docs를 보면 나와있는 목차들의 심화적인 내용을 다루고 있다고 생각하면 편할 듯 하다."><meta itemprop="datePublished" content="2021-04-12T15:51:12&#43;09:00" />
+<meta itemprop="dateModified" content="2021-04-12T15:51:12&#43;09:00" />
+<meta itemprop="wordCount" content="443">
+<meta itemprop="keywords" content="Effective python,이펙티브 파이썬,아이템 19," />
+		<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Effective Python: Python Unpacking "/>
+<meta name="twitter:description" content="Effective Python 이펙티브 파이썬이라는 책은 구글 검색 결과 파이썬 중급자들이 읽는 책이라고 설명되어 있는 부분들이 많다. 나는 굳이 파이썬에 대해 초급, 중급, 고급으로 분류를 해 미리 입문의 허들을 높이는 것은 좋지 않다고 생각한다. 하기사 그럴만큼 파이썬의 기본 동작 원리나 내부를 잘 알지 못한 채 다양한 기법을 배우는 것 또한 좋지는 않지만, 도저히 호기심을 이길 수 가 없어 중급이 아님에도 읽어보려한다. 이 책을 보기 앞서 잠깐 INDEX를 살펴본 결과 파이썬 기본 책이나 Docs를 보면 나와있는 목차들의 심화적인 내용을 다루고 있다고 생각하면 편할 듯 하다."/>
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css">
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo logo--mixed">
+		<a class="logo__link" href="/" title="Jeffrey, Immerse, Learn and Archieve" rel="home">
+			<div class="logo__item logo__imagebox">
+					<img class="logo__img" src="/placeholder.png">
+				</div><div class="logo__item logo__text">
+					<div class="logo__title">Jeffrey, Immerse, Learn and Archieve</div>
+					<div class="logo__tagline">Taking one more step in the footsteps of the seniors</div>
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/about/">
+				<i class='fa fa-heart'></i>
+				<span class="menu__text">about</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/computer-science/">
+				
+				<span class="menu__text">Computer Sciences</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/traces/">
+				
+				<span class="menu__text">Traces</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Effective Python: Python Unpacking </h1>
+			<div class="post__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">Jeffrey Yoon</span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-04-12T15:51:12&#43;09:00">2021-04-12</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/python/" rel="category">Python</a>, <a class="meta__link" href="/categories/effective-python/" rel="category">Effective Python</a>
+	</span>
+</div></div>
+		</header>
+<div class="post__toc toc">
+	<div class="toc__title">Page content</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#effective-python">Effective Python</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+	</div>
+</div><div class="content post__content clearfix">
+			<h3 id="effective-python">Effective Python</h3>
+<p>이펙티브 파이썬이라는 책은 구글 검색 결과 파이썬 중급자들이 읽는 책이라고 설명되어 있는 부분들이 많다. 나는 굳이 파이썬에 대해 초급, 중급, 고급으로 분류를 해 미리 입문의 허들을 높이는 것은 좋지 않다고 생각한다. 하기사 그럴만큼 파이썬의 기본 동작 원리나 내부를 잘 알지 못한 채 다양한 기법을 배우는 것 또한 좋지는 않지만, 도저히 호기심을 이길 수 가 없어 중급이 아님에도 읽어보려한다. 이 책을 보기 앞서 잠깐 INDEX를 살펴본 결과 파이썬 기본 책이나 Docs를 보면 나와있는 목차들의 심화적인 내용을 다루고 있다고 생각하면 편할 듯 하다. <!-- raw HTML omitted --></p>
+<h4 id="item-functions">ITEM:: FUNCtiONS</h4>
+<p>ITEM: <!-- raw HTML omitted --></p>
+<ul>
+<li>Never Unpack More Than Three Variables When Functions Return Multiple Values</li>
+<li>Prefer Rasing Exceptions to Returning None</li>
+<li>Know How Closures Interact with Variable Scope</li>
+<li>Reduce Visual Noise with Variable Positional Arguments</li>
+<li>Provide Optional Behavior with Keyword Arguments</li>
+<li>Use None and Docstrings to Specify Dynamic Default Arguments</li>
+<li>Enforce Clarity with Keyword-Only and Positional-Only Arguments</li>
+<li>Define Function Decorators with functools.wraps <!-- raw HTML omitted --></li>
+</ul>
+<h4 id="item19-never-unpack-more-than-three-variables-when-functions-return-multiple-values">ITEM:19. Never Unpack More Than Three Variables When Functions Return Multiple Values</h4>
+<p>이 아이템은 함수가 한 개 이상의 값들을 리턴할 때 절대 풀어져 있는 상태, 즉 언패킹이 되어있는 상태로 값들을 리턴하지 말라고 이야기하고 있다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_stats</span>(numbers):
+  maximum <span style="color:#f92672">=</span> max(numbers)
+  minimum <span style="color:#f92672">=</span> min(numbers)
+  <span style="color:#66d9ef">return</span> minimum, maximum
+
+lengths <span style="color:#f92672">=</span> [<span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">40</span>, <span style="color:#ae81ff">50</span>, <span style="color:#ae81ff">60</span>, <span style="color:#ae81ff">70</span>]
+minimum, maximum <span style="color:#f92672">=</span> get_stats(lengths)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Min: {minimum} Max: {maximum}&#39;</span>) <span style="color:#75715e"># &gt;&gt;&gt; Min: 60, Max: 73</span>
+</code></pre></div><p>이 경우는 일반적인 언패킹 방식인데, 기능을 하는 함수의 인스턴스를 만들고 인스턴 스가 반환하는 값들을 각각의 변수로 담아 출력하는 예제를 보이고 있다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_avg_ratio</span>(numbers):
+  average <span style="color:#f92672">=</span> sum(numbers) <span style="color:#f92672">/</span> len(numbers)
+  scaled <span style="color:#f92672">=</span> [x <span style="color:#f92672">/</span> average <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> numbers]
+  scaled<span style="color:#f92672">.</span>sort(reverse<span style="color:#f92672">=</span>True)
+  <span style="color:#66d9ef">return</span> scaled
+
+lengths <span style="color:#f92672">=</span> [<span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">40</span>, <span style="color:#ae81ff">50</span>, <span style="color:#ae81ff">60</span>, <span style="color:#ae81ff">70</span>]
+longest, <span style="color:#f92672">*</span>middle, shortest <span style="color:#f92672">=</span> get_avg_ratio(lengths)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Longest: {longest:&gt;4.0%}&#39;</span>)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Shortest: {shortest:&gt;4.0%}&#39;</span>)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_stats</span>(numbers):
+  maximum <span style="color:#f92672">=</span> max(numbers)
+  minimum <span style="color:#f92672">=</span> min(numbers)
+  count <span style="color:#f92672">=</span> len(numbers)
+  average <span style="color:#f92672">=</span> sum(numbers) <span style="color:#f92672">/</span> count
+  sorted_numbers <span style="color:#f92672">=</span> sorted(numbers)
+  middle <span style="color:#f92672">=</span> count <span style="color:#f92672">//</span> <span style="color:#ae81ff">2</span>
+  <span style="color:#66d9ef">if</span> count <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+    lower <span style="color:#f92672">=</span> sorted_numbers[middle <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>]
+    upper <span style="color:#f92672">=</span> sorted_numbers[middle]
+    median <span style="color:#f92672">=</span> (lower <span style="color:#f92672">+</span> upper) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>
+  <span style="color:#66d9ef">else</span>:
+    median <span style="color:#f92672">=</span> sorted_numbers[middle]
+
+  <span style="color:#66d9ef">return</span> minimum, maximum, average, median, count
+
+  minimum, maximum, average, median, count <span style="color:#f92672">=</span> get_stats(lengths)
+  <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Min: {minimum}, Max: {maximum}&#39;</span>)
+  <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Average: {average}, Median: {median}, Count {count}&#39;</span>)
+</code></pre></div><p>이 경우의 문제점은 두 가지라고 소개하고 있는데, 첫째는 많은 언패킹 변수로 인해 에러가 생길 소지가 많다는 것이다. 만약 값을 변수에 담으려고 할 때 사용자가 원했던 변수와 값이 다르게 들어갈 수 있기 때문에(swapped) 에러의 소지가 발생할 수 있고, 둘째는 가독성을 심하게 훼손시킬 가능성이 있다는 것이다. 간단한 예제이지만 만약 변수명이 길 경우 가독성은 상당히 떨어질 수 있음을 직감할 수 있다.</p>
+<!-- raw HTML omitted -->
+<h4 id="item21-know-how-closures-interact-with-variable-scope">ITEM:21. Know How Closures Interact with Variable Scope</h4>
+<h4 id="item22-reduce-visual-noise-with-variable-positional-arguments">ITEM:22. Reduce Visual Noise with Variable Positional Arguments</h4>
+<h4 id="item23-provide-optional-behavior-with-keyword-arguments">ITEM:23. Provide Optional Behavior with Keyword Arguments</h4>
+<h4 id="item24-use-none-and-docstrings-to-specify-dynamic-default-arguments">ITEM:24. Use None and Docstrings to Specify Dynamic Default Arguments</h4>
+<h4 id="item25-enforce-clarity-with-keyword-only-and-positional-only-arguments">ITEM:25. Enforce Clarity with Keyword-Only and Positional-Only Arguments</h4>
+<h4 id="item26-define-function-decorators-with-functoolswraps-br">ITEM:26. Define Function Decorators with functools.wraps <!-- raw HTML omitted --></h4>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/effective-python/" rel="tag">Effective python</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C-%ED%8C%8C%EC%9D%B4%EC%8D%AC/" rel="tag">이펙티브 파이썬</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/%EC%95%84%EC%9D%B4%ED%85%9C-19/" rel="tag">아이템 19</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<figure class="authorbox__avatar">
+		<img alt="Jeffrey Yoon avatar" src="/avatar.jpg" class="avatar" height="90" width="90">
+	</figure>
+	<div class="authorbox__header">
+		<span class="authorbox__name">About Jeffrey Yoon</span>
+	</div>
+	<div class="authorbox__description">
+		Software Developer that&rsquo;s trying to contribute to society 🙈 Traveler with co-worker 🎌 Share, Reading, Talking🙆‍♂️
+	</div>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/computer-science/python/effective/functions/item20/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">Effective Python: Return None</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="q" aria-label="SEARCH…">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="https://jeffrey-kor.github.io/" />
+	</form>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/effective-python/" title="Effective python">Effective python (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/til/" title="TIL">TIL (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%EC%95%84%EC%9D%B4%ED%85%9C-19/" title="아이템 19">아이템 19 (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C-%ED%8C%8C%EC%9D%B4%EC%8D%AC/" title="이펙티브 파이썬">이펙티브 파이썬 (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%ED%9A%8C%EA%B3%A0/" title="회고">회고 (1)</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2021 Jeffrey.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+<script src="/js/custom.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
+</body>
+</html>

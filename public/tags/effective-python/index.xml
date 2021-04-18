@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Effective python on Jeffrey 10 fingers</title>
+    <link>https://jeffrey-kor.github.io/tags/effective-python/</link>
+    <description>Recent content in Effective python on Jeffrey 10 fingers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 12 Apr 2021 17:16:48 +0900</lastBuildDate><atom:link href="https://jeffrey-kor.github.io/tags/effective-python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Effective Python: Return None</title>
+      <link>https://jeffrey-kor.github.io/computer-science/python/effective/functions/item20/</link>
+      <pubDate>Mon, 12 Apr 2021 17:16:48 +0900</pubDate>
+      
+      <guid>https://jeffrey-kor.github.io/computer-science/python/effective/functions/item20/</guid>
+      <description>ITEM:20. Prefer Rasing Exceptions to Returning None 이번 아이템은 함수의 예외에 대한 내용인데 초보 몽키님과 타 블로거분들의 블로그를 참고하면서 천천히 고민해보았다.
+What is the Exception and Why important? 예외란 무엇이고 왜 중요할까? 우리는 프로그램을 만들고 배포를 하게 되며, 사용자가 서비스를 받아줬으면 하는 생각으로 프로그램을 작성하게 된다. 하지만, 사용자가 꼭 제공하고자 하는 서비스의 룰을 지키는 것만은 아닐 것이다. 비밀번호를 입력하는 곳에 나의 시스템에서 허용하지 않는 포맷을 사용한다던지, 아니면 예기치 못한 연산을 실행하도록 한다던지, 연산이 되지 않는(항상 일정한) 값을 제공 한다던지 등등 지켜줘야 하는 포맷을 지키지 않고서도 필터 코드를 통과한다면 차후에 해당 데이터로 어떠한 기능을 하는 연산을 시행했을 때 시스템은 동작을 멈추게 될 것이다.</description>
+    </item>
+    
+    <item>
+      <title>Effective Python: Python Unpacking </title>
+      <link>https://jeffrey-kor.github.io/computer-science/python/effective/functions/item19/</link>
+      <pubDate>Mon, 12 Apr 2021 15:51:12 +0900</pubDate>
+      
+      <guid>https://jeffrey-kor.github.io/computer-science/python/effective/functions/item19/</guid>
+      <description>Effective Python 이펙티브 파이썬이라는 책은 구글 검색 결과 파이썬 중급자들이 읽는 책이라고 설명되어 있는 부분들이 많다. 나는 굳이 파이썬에 대해 초급, 중급, 고급으로 분류를 해 미리 입문의 허들을 높이는 것은 좋지 않다고 생각한다. 하기사 그럴만큼 파이썬의 기본 동작 원리나 내부를 잘 알지 못한 채 다양한 기법을 배우는 것 또한 좋지는 않지만, 도저히 호기심을 이길 수 가 없어 중급이 아님에도 읽어보려한다. 이 책을 보기 앞서 잠깐 INDEX를 살펴본 결과 파이썬 기본 책이나 Docs를 보면 나와있는 목차들의 심화적인 내용을 다루고 있다고 생각하면 편할 듯 하다.</description>
+    </item>
+    
+  </channel>
+</rss>
