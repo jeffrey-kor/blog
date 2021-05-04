@@ -49,14 +49,8 @@ Nest Application의 기본 단위는 Module로 지원하고 있는데 서브 모
 `Main.ts` 의 전체 코드인데, `bootstrap()` Root module을 `AppModule` 로 잡고 시작하는 모습이다.
 
 ##### Controller
-Application의 컨트롤러 부분이며 `@Controller()` 데코레이터와 함께 사용하며, 들어오는 URL에 대한 경로를 지정해주는 역할을 한다.
+Application의 컨트롤러 부분 `@Controller()` 데코레이터와 함께 사용하며, 들어오는 URL에 대한 경로를 지정해주는 역할을 한다.
 다양한 내장 데코레이터들이 있으며 Restful Api를 설계하기 위한 기본 데코레이터들을 제공한다.
-
-- `@Get()`
-- `@Post()`
-- `@Put()`
-- `@Delete()`
-- `@Patch()`
 
 {{<gist jeffrey-kor aa4992156e897f75a31d6200be0224c8 >}}
 
@@ -102,7 +96,6 @@ Application의 서비스 부분을 담당하고 있다. 서비스 레이어는 �
 서비스 레이어의 CatsService 객체는 `@Injectable()` 을 사용해 객체를 IOC 컨테이너에 등록하는 코드를 보여준다.
 
 ##### Middleware
-[공식문서](https://docs.nestjs.com/middleware)
 미들 웨어의 개념을 알기 위해서 이전에 `express` 프레임워크를 사용해봤다면 쉽게 이해할 수 있을 것 같다. 프로그램의 메인 루틴에 따라 어떤 함수를 호출하기 전,
 중간에 한 개 이상의 미들웨어를 끼워 넣어 실행 시키는 중간 단계의 함수나 객체를 말한다.
 아래는 `Express` 프레임워크의 미들웨어의 개념이다.

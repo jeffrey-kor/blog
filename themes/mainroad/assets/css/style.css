@@ -50,7 +50,7 @@ html {
 
 body {
 	margin: 0;
-	font-family: {{ $fontFamilyPrimary }};
+	font-family: muli, avenir, helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
 	font-size: 14px;
 	font-size: .875rem;
 	line-height: 1.6;
@@ -151,7 +151,15 @@ textarea {
 }
 
 /* Typography */
-h1,
+h1 {
+	margin: 0 0 20px;
+	margin: 0 0 1.25rem;
+	font-weight: 700;
+	line-height: 1.3;
+	/*color: #000;*/
+	color: dimgray;
+}
+
 h2,
 h3,
 h4,
@@ -161,7 +169,8 @@ h6 {
 	margin: 0 0 1.25rem;
 	font-weight: 700;
 	line-height: 1.3;
-	color: #000;
+	/*color: #000;*/
+	color: #555;
 }
 
 h1 {
@@ -631,6 +640,14 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 
 .post__title {
 	margin: 0;
+	font-family: 'Teko', sans-serif;
+	background: #272822;
+
+}
+
+/* 내가 추가함 */
+.post__title a {
+	color: orange;
 }
 
 .post__meta {
