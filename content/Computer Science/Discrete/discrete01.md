@@ -1,13 +1,11 @@
 ---
-title: "Discrete01"
+title: "Discrete mathematics: Overview"
 date: 2021-05-08T22:23:37+09:00
 draft: true
 categories:
-  - "Category 1"
-  - "Category 2"
+  - "Discrete mathematics"
 tags:
-  - "Test"
-  - "Another test"
+  - "Discrete mathematics"
 comments: true
 authorbox: true
 pager: true
